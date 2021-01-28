@@ -60,7 +60,7 @@ def calccal(life,bmr):
         return five
 
 
-@app.route('/',methods=["POST"])
+@app.route('/',methods=["GET"])
 def index():
     return render_template('index.html')
 
