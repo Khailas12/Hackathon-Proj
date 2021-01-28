@@ -2,6 +2,7 @@ Flask==1.1.1
 Flask-Images==3.0.2
 Jinja2==2.11.2
 Keras==2.4.3
+wheel~=0.35
 numpy==1.19.5
 opencv-python==4.5.1.48
 requests==2.25.1
@@ -20,3 +21,4 @@ urllib3==1.26.2
 Werkzeug==1.0.1
 wincertstore==0.2
 aniso8601==8.1.0
+tensorflow-gpu==2.4.1
