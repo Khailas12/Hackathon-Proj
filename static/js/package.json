@@ -1,3 +1,5 @@
+npm install serve --s
+
 "scripts": {
 "dev": "react-scripts start",
 "start": "serve -s build",
