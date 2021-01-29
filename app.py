@@ -2,6 +2,7 @@ from flask import *
 from tensorflow.keras.models import load_model
 from flask import Flask , render_template , request, redirect,jsonify,send_from_directory
 from bmi import Meal_bmi
+import os
 from calories_check import req
 import json
 import cv2
@@ -24,6 +25,9 @@ def covid_prediction(image_test):
     label = ["POSITIVE", "NEGATIVE"]
     return label[all_classes[0][0]]
 
+@app.route('/',methods=["GET","POST"])
+def index():
+    return render_template('index.html')
 
 @app.route("/covid")
 def covid():
@@ -60,9 +64,6 @@ def calccal(life,bmr):
         return five
 
 
-@app.route('/',methods=["GET"])
-def index():
-    return render_template('index.html')
 
 @app.route('/workout',methods=["GET","POST"])
 def work():
@@ -137,6 +138,11 @@ def calories(name):
 	}
 
 	return json.dumps(data["inna"])
+
+
+@app.route('/favicon.ico')
+def fav():
+    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
 
 
 if __name__ == "__main__":
