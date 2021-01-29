@@ -29,7 +29,7 @@ def covid_prediction(image_test):
 def index():
     return render_template('index.html')
 
-@app.route("/covid")
+@app.route("/covid",methods=["GET", "POST"])
 def covid():
     return render_template("covid-19-index.html")
 
